@@ -20,7 +20,6 @@ def detials(request):
             "update_id":i
         })
 
-
     if request.method=="POST":
         data=employe(request.POST)
         

@@ -7,21 +7,17 @@
         <form method="POST">
             {% csrf_token %}
             {{ data.as_p }}
-            <button type="submit">add</button>
+            {% if update_id != None %}
+               <input type="hidden" name="update_id" value="{{ update_id }}">
+               <button type="submit">Update</button>
+            {% else %}
+               <button type="submit">add</button>
+               
+            {% endif %}
+            
         </form>
 
         <h1>employee detials</h1>
-        <!-- {% for i in data %}
-        <p>{{i.name}}</p>
-        <p>{{i.place}}</p>
-        <p>{{i.DOB}}</p>
-        {% endfor %} -->
-
-        <!-- {% if name %}
-        <p>{{name}}</p>
-        <p>{{place}}</p>
-        <p>{{DOB}}</p>
-        {% endif %} -->
     <p>
     <b>Name</b> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
     <b>Place</b> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
@@ -33,8 +29,12 @@
     {{ i.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
     {{ i.place }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
     {{ i.DOB }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-     <button type="update">update</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-     <button type="delete">delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+     <a href="?update={{ forloop.counter0 }}">
+            <button type="button">Update</button>
+     </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+     <a href="?delete={{ forloop.counter0 }}">
+            <button type="button">Delete</button>
+        </a>
    </p>
     {% endfor %}
     </body>
