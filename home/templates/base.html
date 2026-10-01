@@ -23,17 +23,17 @@
         <p>{{DOB}}</p>
         {% endif %} -->
     <p>
-    <b>Name</b> &nbsp;&nbsp;
-    <b>Place</b> &nbsp;&nbsp;
+    <b>Name</b> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    <b>Place</b> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
     <b>DOB</b>
     </p>
 
-    {% if name %}
+    {% for i in employees %}
    <p>
-    {{ name }} &nbsp;&nbsp;
-    {{ place }} &nbsp;&nbsp;
-    {{ DOB }}
+    {{ i.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    {{ i.place }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    {{ i.DOB }}
    </p>
-    {% endif %}
+    {% endfor %}
     </body>
 </html>
