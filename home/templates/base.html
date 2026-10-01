@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>data</title>
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {{ data.as_p }}
+            <button type="submit">add</button>
+        </form>
+
+        <h1>employee detials</h1>
+        <!-- {% for i in data %}
+        <p>{{i.name}}</p>
+        <p>{{i.place}}</p>
+        <p>{{i.DOB}}</p>
+        {% endfor %} -->
+
+        <!-- {% if name %}
+        <p>{{name}}</p>
+        <p>{{place}}</p>
+        <p>{{DOB}}</p>
+        {% endif %} -->
+    <p>
+    <b>Name</b> &nbsp;&nbsp;
+    <b>Place</b> &nbsp;&nbsp;
+    <b>DOB</b>
+    </p>
+
+    {% if name %}
+   <p>
+    {{ name }} &nbsp;&nbsp;
+    {{ place }} &nbsp;&nbsp;
+    {{ DOB }}
+   </p>
+    {% endif %}
+    </body>
+</html>
